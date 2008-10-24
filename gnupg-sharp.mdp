@@ -1,0 +1,35 @@
+<Project name="gnupg-sharp" fileversion="2.0" Description="GnuPG-Sharp is a library which can be used to access&#xA;GPG keyrings, using the command-line utility &quot;gnupg&quot;,&#xA;or &quot;gnupg2&quot;, at will." DefaultNamespace="GnuPG" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="bin/Debug" assemblyKeyFile="." assembly="gnupg-sharp" />
+      <Build debugmode="True" target="Library" />
+      <Execution runwithwarnings="True" consolepause="False" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Mcs" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" definesymbols="DEBUG" generatexmldocumentation="True" langversion="ISO_2" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="bin/Release" assemblyKeyFile="." assembly="gnupg-sharp" />
+      <Build debugmode="False" target="Library" />
+      <Execution runwithwarnings="True" consolepause="False" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Mcs" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" generatexmldocumentation="True" langversion="ISO_2" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <Contents>
+    <File name="src" subtype="Directory" buildaction="Compile" />
+    <File name="src/GPG.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/GPGException.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/Commands.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/VerboseLevel.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/TrustLevel.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/Utils.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/RecordType.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/Algorithm.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/Keyset.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/Key.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/UID.cs" subtype="Code" buildaction="Compile" />
+    <File name="src/Signature.cs" subtype="Code" buildaction="Compile" />
+  </Contents>
+  <References>
+    <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </References>
+</Project>

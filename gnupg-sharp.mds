@@ -1,0 +1,20 @@
+<Combine name="gnupg-sharp" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="gnupg-sharp" configuration="Debug" />
+      <Entry build="True" name="example" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="gnupg-sharp" configuration="Release" />
+      <Entry build="True" name="example" configuration="Release" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="example" single="True">
+    <Execute type="None" entry="gnupg-sharp" />
+    <Execute type="None" entry="example" />
+  </StartMode>
+  <Entries>
+    <Entry filename="gnupg-sharp.mdp" />
+    <Entry filename="example/example.mdp" />
+  </Entries>
+</Combine>
