@@ -158,6 +158,10 @@ namespace GnuPG {
 			switch (Tag) {
 				case 1:
 					return Algorithm.RSA;
+				case 2:
+					return Algorithm.RSAEncryptOnly;
+				case 3:
+					return Algorithm.RSASignOnly;
 				case 16:
 					return Algorithm.ElgamalEncryptOnly;
 				case 17:

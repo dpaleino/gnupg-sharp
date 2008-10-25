@@ -29,6 +29,14 @@ namespace GnuPG {
 		/// </summary>
 		RSA,
 		/// <summary>
+		/// 2 - RSA (encrypt only)
+		/// </summary>
+		RSAEncryptOnly,
+		/// <summary>
+		/// 3 - RSA (sign only)
+		/// </summary>
+		RSASignOnly,
+		/// <summary>
 		/// 16 - Elgamal (encrypt only)
 		/// </summary>
 		ElgamalEncryptOnly,
