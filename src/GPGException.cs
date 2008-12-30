@@ -30,6 +30,8 @@ namespace GnuPG {
 		/// A <see cref="System.String"/>, containing the Exception message.
 		/// </param>
 		public GPGException (string msg) : base("GPG: " + msg) {
+			Console.WriteLine(this.StackTrace);
+			Console.WriteLine(this.Source);
 		}
 	}
 }
