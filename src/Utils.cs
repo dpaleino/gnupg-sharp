@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace GnuPG {
 	internal static class Utils {
@@ -176,18 +177,16 @@ namespace GnuPG {
 		internal static Hashtable ParseUsername(string Username) {
 			Hashtable hash = new Hashtable();
 			string u = Username; // just for convenience
-			// TODO: fix all this mess with regular expressions.
-			if (((u.IndexOf('<') != -1) && (u.IndexOf('>') != -1)) && (u.IndexOf('>') > u.IndexOf('<'))) {
-				hash.Add("email", u.Substring(u.LastIndexOf('<') + 1, u.LastIndexOf('>') - u.LastIndexOf('<') - 1));
-			} else {
-				hash.Add("email", "");
+			Regex re = new Regex(Defines.UIDRegex);
+			if (re.IsMatch(u)) {
+				Match m = re.Match(u);
+				hash.Add("name", m.Groups[1].Value.Trim());
+				hash.Add("comment", m.Groups[3].Value.Trim());
+				hash.Add("email", m.Groups[4].Value.Trim());
 			}
-			if (((u.IndexOf('(') != -1) && (u.IndexOf(')') != -1)) && (u.IndexOf(')') > u.IndexOf('('))) {
-				hash.Add("comment", u.Substring(u.LastIndexOf('(') + 1, u.LastIndexOf(')') - u.LastIndexOf('(') - 1));
-			} else {
-				hash.Add("comment", "");
+			else {
+				throw new GPGException("Cannot parse username.");
 			}
-			hash.Add("name", u.Replace("("+hash["comment"]+")", "").Replace("<"+hash["email"]+">", "").Trim());
 			return hash;
 		}
 	}
