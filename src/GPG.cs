@@ -312,12 +312,27 @@ namespace GnuPG {
 			return me.Output;
 		}
 		
+		/// <summary>
+		/// Returns a list of available secret keys.
+		/// </summary>
+		/// <returns>
+		/// A <see cref="ArrayList"/>
+		/// </returns>
 		public static ArrayList GetAvailableSecretKeys () {
 			GPG me = new GPG();
 			me.Initialize();
 			return GetAvailableSecretKeys(me.SecretKeyring);
 		}
 		
+		/// <summary>
+		/// Returns a list of available secret keys from <paramref name="SecretKeyring"/>.
+		/// </summary>
+		/// <param name="SecretKeyring">
+		/// A <see cref="System.String"/>
+		/// </param>
+		/// <returns>
+		/// A <see cref="ArrayList"/>
+		/// </returns>
 		public static ArrayList GetAvailableSecretKeys (string SecretKeyring) {
 			ArrayList mySecretKeys = new ArrayList();
 			GPG me = new GPG();
